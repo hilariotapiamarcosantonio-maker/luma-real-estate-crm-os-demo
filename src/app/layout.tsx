@@ -1,0 +1,31 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { AppShell } from "@/components/layout/AppShell";
+import { brand } from "@/lib/brand";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: `${brand.productName} | ${brand.parentBrand}`,
+  description:
+    "Sistema comercial inmobiliario para captación, seguimiento, atribución de campañas y cierre de prospectos.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const isConnected = !!(
+    process.env.GOOGLE_SHEETS_CLIENT_EMAIL || process.env.GOOGLE_CLIENT_EMAIL
+  );
+
+  return (
+    <html lang="es" className="dark">
+      <body className={inter.className}>
+        <AppShell isConnected={isConnected}>{children}</AppShell>
+      </body>
+    </html>
+  );
+}
