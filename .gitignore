@@ -64,3 +64,6 @@ dumps/
 # local-only automation scripts
 scripts/prepare-demo-drive.mjs
 scripts/search-secrets-check.mjs
+scripts/deploy-vercel-env.mjs
+
+.vercel
