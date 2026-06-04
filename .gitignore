@@ -65,5 +65,6 @@ dumps/
 scripts/prepare-demo-drive.mjs
 scripts/search-secrets-check.mjs
 scripts/deploy-vercel-env.mjs
+scripts/test-production-crm.mjs
 
 .vercel
